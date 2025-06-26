@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  parquet-viz:
+    build: .
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./data:/app/data         # shared parquet input folder
+      - ./src:/app/src           # shared notebooks/scripts/output
