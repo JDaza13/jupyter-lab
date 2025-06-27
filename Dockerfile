@@ -19,6 +19,11 @@ RUN pip install --no-cache-dir \
     plotly \
     ipykernel && \
     python -m ipykernel install --name "python3" --user
+    
+# Force JupyterLab to use dark theme by default
+RUN mkdir -p /root/.jupyter/lab/user-settings/@jupyterlab/apputils-extension && \
+    echo '{ "theme": "JupyterLab Dark" }' > /root/.jupyter/lab/user-settings/@jupyterlab/apputils-extension/themes.jupyterlab-settings
+
 
 EXPOSE 8888
 
